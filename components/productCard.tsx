@@ -8,11 +8,11 @@ type Props = {
   name?: string
   isDiscounted?: boolean
   value?: number
+  image?: string
 }
 
 export default function ProductCard({id, name, isDiscounted, value}: Props) {
   const productName = name ? name : 'Lorem ipsum'
-  const productId = id ? id : '1'
 
   const formatter = new Intl.NumberFormat('pt-BR', {
     style: 'currency',
@@ -24,15 +24,19 @@ export default function ProductCard({id, name, isDiscounted, value}: Props) {
   return (
     <div className='flex flex-col bg-slate-50 rounded hover:shadow-lg'>
       <div className='overflow-hidden rounded min-w-[14rem] max-w-[16rem]'>
-        <Image
-          src={shoe}
-          alt={productName}
-          placeholder='blur'
-          className='object-cover'
-        />
+        <Link href={`/product/${id ? id : 'product'}`}>
+          <Image
+            src={shoe}
+            width={400}
+            height={400}
+            alt={productName}
+            // placeholder='blur'
+            className='object-cover'
+          />
+        </Link>
       </div>
       <div className='flex flex-col my-2 gap-1'>
-        <Link href={`/product/${productId}`}>
+        <Link href={`/product/${id}`}>
           <h3 className='font-semibold text-base hover:underline'>{productName}</h3>
         </Link>
         <div className='flex flex-row justify-between px-2'>
@@ -42,7 +46,9 @@ export default function ProductCard({id, name, isDiscounted, value}: Props) {
                 size={18}
               />
               <span
-                className="absolute hidden group-hover:flex -top-3 -left-7 -translate-y-full w-24 px-2 py-1 bg-gray-700 rounded-lg text-center text-white text-sm after:content-[''] after:absolute after:left-1/2 after:top-[100%] after:-translate-x-1/2 after:border-8 after:border-x-transparent after:border-b-transparent after:border-t-gray-700"
+                className="absolute hidden group-hover:flex -top-3 -left-7 -translate-y-full w-24 px-2 py-1 bg-gray-700
+                rounded-lg text-center text-white text-sm after:content-[''] after:absolute after:left-1/2 after:top-[100%]
+                after:-translate-x-1/2 after:border-8 after:border-x-transparent after:border-b-transparent after:border-t-gray-700"
                 >Adicionar ao carrinho
               </span>
             </button>
