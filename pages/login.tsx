@@ -20,9 +20,9 @@ export default function Login({ }: Props) {
           </div>
           <form className="py-4 px-10 flex flex-col" action="">
             <label htmlFor="email" className="font-semibold mb-1">Email:</label>
-            <input type="email" name="email" id="email" placeholder="Email" className="border border-slate-400 rounded p-2 mb-2" />
+            <input type="email" name="email" id="email" placeholder="Email" required className="border border-slate-400 rounded p-2 mb-2" />
             <label htmlFor="password" className="font-semibold mb-1">Senha:</label>
-            <input type="password" name="password" id="password" placeholder="Senha" className="border border-slate-400 rounded p-2 mb-2" />
+            <input type="password" name="password" id="password" placeholder="Senha" required className="border border-slate-400 rounded p-2 mb-2" />
             <div className="flex flex-row-reverse items-center flex-wrap justify-between my-4">
               <button type="submit" className="bg-slate-500 font-bold text-slate-200 px-6 py-1 rounded text-lg">Login</button>
               <p>Ainda não possui cadastro? <Link href={"/cadastro"} className="font-semibold underline text-slate-500">Cadastre-se</Link></p>

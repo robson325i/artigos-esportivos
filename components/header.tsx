@@ -2,6 +2,8 @@ import React from 'react'
 import { FaUserCircle } from 'react-icons/fa'
 import { RiArrowDownSLine } from 'react-icons/ri'
 import Link from 'next/link'
+import Image from 'next/image'
+import logo from '../public/next.svg'
 
 type Props = {}
 
@@ -10,16 +12,19 @@ function Header({ }: Props) {
     <div className='divide-y divide-slate-400'>
       <header className='w-full bg-slate-200 flex flex-row items-center justify-between'>
         <Link href={'/'}>
-          <span className='flex flex-row my-2'>
-            <h3 className='ml-2 text-lg font-bold'>LOGO</h3>
+          <span className='flex flex-row ml-5 my-2'>
+            <Image
+              src={logo}
+              alt='Logotipo'
+              height={24}
+            />
           </span>
         </Link>
-        <h4 className='ml-8 font-semibold text-center'>Artigos Esportivos</h4>
-        <Link href={'/login'}>
-          <span className='mr-2 flex flex-row items-center gap-1 hover:cursor-pointer'>
+        <h4 className='font-semibold text-xl justify-self-center'>Artigos Esportivos</h4>
+        <Link href={'/login'} className='h-full w-[118px]'>
+          <span className='mr-2 flex flex-row items-center gap-1 h-full hover:bg-slate-300'>
             <FaUserCircle size={24} />
-            <p className='text-sm'>Entrar</p>
-            <RiArrowDownSLine size={24} />
+            <p className='font-semibold'>Entrar</p>
           </span>
         </Link>
       </header>
@@ -38,7 +43,7 @@ function Header({ }: Props) {
         </span>
 
         <span>
-          <Link href={'#promoções'} className='flex gap-1 justify-center bg-slate-300 px-16 py-2 hover:bg-slate-400 font-semibold'>
+          <Link href={'#promocoes'} className='flex gap-1 justify-center bg-slate-300 px-16 py-2 hover:bg-slate-400 font-semibold'>
             Promoções
           </Link>
         </span>
