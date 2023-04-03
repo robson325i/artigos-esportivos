@@ -1,4 +1,5 @@
-# Artigos Esportivos - um e-commerce de 'artigos esportivos'
+# Artigos Esportivos
+## um e-commerce de 'artigos esportivos'
 
 ## Esse é um protótipo desenvolvido para um teste prático
 
